@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umred Karhandla Wildlife Sanctuary & Tiger Reserve</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jungle: {
+                            50: '#f2f7f4',
+                            100: '#e1ede6',
+                            800: '#1e4635',
+                            900: '#122e22',
+                            950: '#0a1a13'
+                        },
+                        amberGold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309'
+                        },
+                        earth: '#fbf9f5'
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(10, 26, 19, 0.45) 0%, rgba(10, 26, 19, 0.88) 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1e4635;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-earth text-gray-800 font-body antialiased selection:bg-amberGold-500 selection:text-white">
+
+    <!-- Top Announcement Bar (Conservation News) -->
+    <div class="bg-amberGold-700 text-white text-xs sm:text-sm py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+            <div class="flex items-center gap-2 text-center md:text-left">
+                <span class="bg-white text-amberGold-700 font-bold px-2 py-0.5 rounded-full text-xs uppercase tracking-wider animate-pulse">Conservation Update</span>
+                <span><strong>Population Control Plan:</strong> Maharashtra mulls leopard sterilization to promote human-wildlife coexistence.</span>
+            </div>
+            <a href="#conservation-news" class="underline hover:text-amber-200 text-xs whitespace-nowrap transition-colors">Read Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-50 bg-jungle-900/95 backdrop-blur-md border-b border-jungle-800 text-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-amberGold-500 flex items-center justify-center text-jungle-950 font-bold text-xl shadow-lg">
+                        <i class="fa-solid fa-paw"></i>
+                    </div>
+                    <div>
+                        <span class="font-heading font-bold text-xl tracking-wider block leading-none">UMRED KARHANDLA</span>
+                        <span class="text-xs text-amberGold-400 font-medium tracking-widest uppercase">Tiger Reserve & Sanctuary</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#about" class="hover:text-amberGold-400 transition-colors py-2">About</a>
+                    <a href="#gates" class="hover:text-amberGold-400 transition-colors py-2">Safari Gates</a>
+                    <a href="#safari-booking" class="hover:text-amberGold-400 transition-colors py-2">Tariffs & Safari</a>
+                    <a href="#resorts" class="hover:text-amberGold-400 transition-colors py-2">Resorts & Stays</a>
+                    <a href="#reach" class="hover:text-amberGold-400 transition-colors py-2">How to Reach</a>
+                    <a href="#faq" class="hover:text-amberGold-400 transition-colors py-2">FAQs</a>
+                    <a href="#contact" class="bg-amberGold-500 hover:bg-amberGold-600 text-jungle-950 font-semibold px-4 py-2 rounded-lg transition-all shadow-md transform hover:-translate-y-0.5">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-200 hover:text-white focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-jungle-950 border-t border-jungle-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-gray-200 hover:text-amberGold-400">About</a>
+            <a href="#gates" class="block py-2 text-gray-200 hover:text-amberGold-400">Safari Gates & Wildlife</a>
+            <a href="#safari-booking" class="block py-2 text-gray-200 hover:text-amberGold-400">Tariffs & Safari</a>
+            <a href="#resorts" class="block py-2 text-gray-200 hover:text-amberGold-400">Resorts & Stays</a>
+            <a href="#reach" class="block py-2 text-gray-200 hover:text-amberGold-400">How to Reach</a>
+            <a href="#faq" class="block py-2 text-gray-200 hover:text-amberGold-400">FAQs</a>
+            <a href="#contact" class="block text-center bg-amberGold-500 text-jungle-950 font-semibold px-4 py-2 rounded-lg mt-2">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (ONLY picture retained here) -->
+    <header class="relative min-h-[85vh] flex items-center justify-center bg-cover bg-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&q=80&w=2000');">
+        <div class="absolute inset-0 hero-overlay"></div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center text-white py-16">
+            <div class="inline-flex items-center gap-2 bg-jungle-800/80 backdrop-blur-md border border-amberGold-500/40 text-amberGold-400 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 shadow-lg">
+                <i class="fa-solid fa-compass"></i> Central India's Bengal Tiger Sanctuary
+            </div>
+            
+            <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                Umred Karhandla <br><span class="text-amberGold-400 italic">Tiger Reserve</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+                Home to iconic Bengal tigers like <span class="text-amberGold-400 font-semibold">Tigress Fairy (F2)</span>, <span class="text-amberGold-400 font-semibold">Surya</span>, <span class="text-amberGold-400 font-semibold">Shadow</span>, and <span class="text-amberGold-400 font-semibold">N4 Male</span>. Discover pristine teak forests, sloth bears, Indian gaur, and over 180 exotic migratory and native bird species just 1.5 hours from Nagpur.
+            </p>
+
+            <!-- Key Quick Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-10">
+                <div class="bg-jungle-950/70 border border-jungle-800 rounded-xl p-4 backdrop-blur-md transform hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-location-dot text-amberGold-400 text-2xl mb-1"></i>
+                    <div class="text-2xl font-bold font-heading">63 km</div>
+                    <div class="text-xs text-gray-300">From Nagpur Station</div>
+                </div>
+                <div class="bg-jungle-950/70 border border-jungle-800 rounded-xl p-4 backdrop-blur-md transform hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-crow text-amberGold-400 text-2xl mb-1"></i>
+                    <div class="text-2xl font-bold font-heading">180+</div>
+                    <div class="text-xs text-gray-300">Bird Species</div>
+                </div>
+                <div class="bg-jungle-950/70 border border-jungle-800 rounded-xl p-4 backdrop-blur-md transform hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-door-open text-amberGold-400 text-2xl mb-1"></i>
+                    <div class="text-2xl font-bold font-heading">3 Gates</div>
+                    <div class="text-xs text-gray-300">Karhandla, Gothangaon, Pauni</div>
+                </div>
+                <div class="bg-jungle-950/70 border border-jungle-800 rounded-xl p-4 backdrop-blur-md transform hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-clock text-amberGold-400 text-2xl mb-1"></i>
+                    <div class="text-2xl font-bold font-heading">2 Shifts</div>
+                    <div class="text-xs text-gray-300">Morning & Evening Safaris</div>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#gates" class="bg-amberGold-500 hover:bg-amberGold-600 text-jungle-950 font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg hover:shadow-amberGold-500/20 transform hover:-translate-y-1">
+                    <i class="fa-solid fa-shield-cat mr-2"></i> Explore Safari Gates
+                </a>
+                <a href="#safari-booking" class="bg-jungle-800/90 hover:bg-jungle-800 border border-amberGold-500/50 text-white font-semibold px-8 py-3.5 rounded-xl transition-all shadow-lg hover:border-amberGold-400 transform hover:-translate-y-1">
+                    <i class="fa-solid fa-ticket mr-2"></i> Safari Rates & Booking
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+        <!-- Conservation & Park Highlights Banner -->
+        <section id="conservation-news" class="bg-white rounded-2xl p-6 lg:p-8 shadow-xl border-l-8 border-amberGold-500 relative overflow-hidden">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div class="space-y-3 max-w-3xl">
+                    <div class="flex items-center gap-2 text-amberGold-600 font-bold text-xs uppercase tracking-wider">
+                        <i class="fa-solid fa-newspaper text-sm"></i> Official Wildlife & Conservation Update
+                    </div>
+                    <h2 class="font-heading text-2xl sm:text-3xl font-bold text-jungle-900">
+                        Maharashtra Mulls Leopard Sterilization for Population Control
+                    </h2>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        To manage human-wildlife conflict, Maharashtra (ranking 3rd in India for leopard numbers) is considering scientific leopard sterilization and awaiting Central Government approval. Additional measures like habitat enhancement, scientific studies, and safety law reviews are actively being pursued to ensure peaceful coexistence between wildlife and neighboring local communities.
+                    </p>
+                </div>
+                <div class="w-full md:w-auto flex-shrink-0 bg-jungle-50 p-4 rounded-xl border border-jungle-100 text-center">
+                    <i class="fa-solid fa-leaf text-jungle-800 text-3xl mb-2"></i>
+                    <div class="font-bold text-jungle-900 text-sm">Protected Corridor</div>
+                    <div class="text-xs text-gray-500">Connected to Tadoba & Nagbheed</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Safari Gates Section -->
+        <section id="gates" class="scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amberGold-600 font-bold uppercase tracking-widest text-xs">Choose Your Gateway</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-jungle-900 mt-2">
+                    Explore Park Entrance Gates
+                </h2>
+                <p class="text-gray-600 mt-3 text-sm sm:text-base">
+                    Each gate offers a distinct ecosystem, unique tiger territories, scenic waterbodies, and safari routes.
+                </p>
+            </div>
+
+            <!-- Gate Selector Tabs -->
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex p-1.5 bg-gray-200/80 rounded-2xl space-x-1 sm:space-x-2 w-full max-w-2xl text-xs sm:text-base font-semibold">
+                    <button onclick="switchGate('karhandla')" id="tab-karhandla" class="gate-tab flex-1 py-3 px-4 rounded-xl transition-all shadow-sm bg-jungle-800 text-white">
+                        <i class="fa-solid fa-gate mr-1.5"></i> Karhandla Gate
+                    </button>
+                    <button onclick="switchGate('gothangaon')" id="tab-gothangaon" class="gate-tab flex-1 py-3 px-4 rounded-xl transition-all text-gray-700 hover:text-jungle-900">
+                        <i class="fa-solid fa-water mr-1.5"></i> Gothangaon Gate
+                    </button>
+                    <button onclick="switchGate('pauni')" id="tab-pauni" class="gate-tab flex-1 py-3 px-4 rounded-xl transition-all text-gray-700 hover:text-jungle-900">
+                        <i class="fa-solid fa-tree mr-1.5"></i> Pauni Gate
+                    </button>
+                </div>
+            </div>
+
+            <!-- Gate Content Cards -->
+            <div id="gate-content-container">
+
+                <!-- 1. Karhandla Gate Content -->
+                <div id="gate-karhandla" class="gate-content grid grid-cols-1 lg:grid-cols-12 gap-8 bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100">
+                    <div class="lg:col-span-8 space-y-6">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <span class="bg-amberGold-100 text-amberGold-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                Most Popular Entry
+                            </span>
+                            <span class="text-xs text-gray-500 font-medium">
+                                <i class="fa-solid fa-route text-amberGold-500"></i> Safari Track: 55 – 60 km
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-3xl font-bold text-jungle-900">Karhandla Gate</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                            Karhandla is the most famous gate of the Umred-Karhandla Jungle. Highly renowned for frequent sightings of **sloth bears**, Bengal tigers, Indian gaur (bison), nilgai, and spotted deer.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="bg-jungle-50 p-4 rounded-2xl border border-jungle-100">
+                                <div class="font-bold text-jungle-900 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-paw text-amberGold-600"></i> Resident Wildlife
+                                </div>
+                                <p class="text-xs text-gray-600">Royal Bengal Tigers, Indian Leopards, Sloth Bears, Indian Gaur, Nilgai, Wild Dogs (Dhole)</p>
+                            </div>
+                            <div class="bg-jungle-50 p-4 rounded-2xl border border-jungle-100">
+                                <div class="font-bold text-jungle-900 flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-feather text-amberGold-600"></i> Birdlife Highlights
+                                </div>
+                                <p class="text-xs text-gray-600">Red-crested Pochard (migratory, Nov-Feb), White-eyed Buzzard, Crested Serpent Eagle, Scops Owl</p>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-100 pt-4 flex flex-wrap items-center justify-between gap-4 text-xs text-gray-600">
+                            <div><strong>Distance from Nagpur:</strong> 63 km (~1.5 hours)</div>
+                            <div><strong>Safari Duration:</strong> 4 hours</div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 flex flex-col justify-center gap-4">
+                        <div class="bg-amber-50 p-6 rounded-2xl border border-amber-200 text-xs text-amber-900 space-y-2">
+                            <div class="font-bold text-sm text-amberGold-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-info text-amberGold-600"></i> Insider Tip
+                            </div>
+                            <p class="leading-relaxed">Karhandla gate is closest to Nagpur and offers maximum luxury resorts nearby. Book early to secure morning slot permits!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Gothangaon Gate Content -->
+                <div id="gate-gothangaon" class="gate-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100">
+                    <div class="lg:col-span-8 space-y-6">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                Tigress Fairy's Kingdom
+                            </span>
+                            <span class="text-xs text-gray-500 font-medium">
+                                <i class="fa-solid fa-route text-amberGold-500"></i> Safari Track: 45 km
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-3xl font-bold text-jungle-900">Gothangaon Gate</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                            Famous for scenic beauty, multiple water bodies, and the **Indira Gandhi Backwaters (Gosikhurd)**. Gothangaon is situated 65 km from Nagpur and is easily accessible by personal vehicles.
+                        </p>
+
+                        <div class="bg-amberGold-50 p-4 rounded-2xl border border-amberGold-200 space-y-2">
+                            <div class="font-bold text-amberGold-900 flex items-center gap-2">
+                                <i class="fa-solid fa-crown text-amberGold-600"></i> Star Wildlife Attractions
+                            </div>
+                            <ul class="text-xs sm:text-sm text-gray-700 space-y-1 list-disc list-inside">
+                                <li><strong>Tigress Fairy (F2):</strong> Famous for her light-colored coat, celebrated for raising rare litters of 5 cubs in the sanctuary.</li>
+                                <li><strong>Surya Tiger:</strong> Dominant male tiger, son of famous Tigress Maya from Tadoba, ruling Gothangaon zone.</li>
+                            </ul>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-jungle-50 p-4 rounded-2xl border border-jungle-100">
+                                <div class="font-bold text-jungle-900 text-xs mb-1"><i class="fa-solid fa-binoculars mr-1 text-amberGold-600"></i> Migratory Birds</div>
+                                <p class="text-xs text-gray-600">Red Star, Northern Shoveler, Northern Pintail, Red-crested Pochard (Nov – Feb)</p>
+                            </div>
+                            <div class="bg-jungle-50 p-4 rounded-2xl border border-jungle-100">
+                                <div class="font-bold text-jungle-900 text-xs mb-1"><i class="fa-solid fa-water mr-1 text-amberGold-600"></i> Waterbodies</div>
+                                <p class="text-xs text-gray-600">Gosikhurd Backwaters provide stunning wildlife sighting points</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 flex flex-col justify-center gap-4">
+                        <div class="bg-teal-50 p-6 rounded-2xl border border-teal-200 text-xs text-teal-900 space-y-2">
+                            <div class="font-bold text-sm text-teal-800 flex items-center gap-1.5">
+                                <i class="fa-solid fa-water text-teal-600"></i> Zone Highlights
+                            </div>
+                            <p class="leading-relaxed">Quieter tracks and higher chances of waterbody sightings around Gosikhurd backwaters.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Pauni Gate Content -->
+                <div id="gate-pauni" class="gate-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100">
+                    <div class="lg:col-span-8 space-y-6">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                Riverside Scenic Zone
+                            </span>
+                            <span class="text-xs text-gray-500 font-medium">
+                                <i class="fa-solid fa-route text-amberGold-500"></i> Safari Track: 55 – 60 km
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-3xl font-bold text-jungle-900">Pauni Gate (Pull / Khapri)</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                            Perhaps the most picturesque entry to the forest, situated near the **Wainganga River**. Known for frequent sloth bear sightings, majestic tiger migrations, and rich bird diversity.
+                        </p>
+
+                        <div class="bg-indigo-50 p-4 rounded-2xl border border-indigo-200 space-y-2">
+                            <div class="font-bold text-indigo-950 flex items-center gap-2">
+                                <i class="fa-solid fa-shield-halved text-indigo-600"></i> Iconic Resident Tigers
+                            </div>
+                            <ul class="text-xs sm:text-sm text-indigo-900 space-y-1 list-disc list-inside">
+                                <li><strong>Tigress Shadow:</strong> Migrated 170 km from Moharli range (Tadoba) and thrives in this zone.</li>
+                                <li><strong>N4 Male Tiger:</strong> Major tourist attraction migrated from Ghodazari range, Nagbheed.</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-gray-100 pt-4 flex flex-wrap items-center justify-between gap-4 text-xs text-gray-600">
+                            <div><strong>Distance from Nagpur:</strong> 90 km (~2 hours)</div>
+                            <div><strong>Key Avian Species:</strong> Oriental Honey Buzzard, Mottled Wood Owl, Indian Grey Hornbill</div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 flex flex-col justify-center gap-4">
+                        <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-200 text-xs text-indigo-900 space-y-2">
+                            <div class="font-bold text-sm text-indigo-800 flex items-center gap-1.5">
+                                <i class="fa-solid fa-bridge text-indigo-600"></i> Wainganga River Front
+                            </div>
+                            <p class="leading-relaxed">Combine your jungle safari with local sightseeing near Gose Khurd Dam and riverside retreats.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Interactive Safari Schedule & Rates Section -->
+        <section id="safari-booking" class="scroll-mt-24">
+            <div class="bg-jungle-950 text-white rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-amberGold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="max-w-3xl mb-10">
+                    <span class="text-amberGold-400 font-bold uppercase tracking-widest text-xs">Plan Your Wildlife Drive</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mt-2">Safari Schedule & Tariff Details</h2>
+                    <p class="text-gray-300 text-sm sm:text-base mt-2">Official rates and safari shift details for Umred Karhandla Tiger Reserve.</p>
+                </div>
+
+                <!-- Shift Timings Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                    <div class="bg-jungle-900/90 border border-jungle-800 p-5 rounded-2xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center text-2xl flex-shrink-0">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs text-amberGold-400 font-bold uppercase">Morning Shift</div>
+                            <div class="text-xl font-bold font-heading">06:00 AM – 10:00 AM</div>
+                            <div class="text-xs text-gray-400 mt-1">Ideal for birdwatching & tiger tracking</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-jungle-900/90 border border-jungle-800 p-5 rounded-2xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center text-2xl flex-shrink-0">
+                            <i class="fa-solid fa-cloud-sun"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs text-amberGold-400 font-bold uppercase">Evening Shift</div>
+                            <div class="text-xl font-bold font-heading">02:00 PM – 06:00 PM</div>
+                            <div class="text-xs text-gray-400 mt-1">Best for waterhole sightings near sunset</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rates Table -->
+                <div class="overflow-x-auto mb-8">
+                    <table class="w-full text-left text-sm">
+                        <thead>
+                            <tr class="border-b border-jungle-800 text-amberGold-400 font-heading text-base">
+                                <th class="pb-3 px-4">Fee Component</th>
+                                <th class="pb-3 px-4">Monday to Friday</th>
+                                <th class="pb-3 px-4">Saturday & Sunday</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-jungle-900 text-gray-200">
+                            <tr class="hover:bg-jungle-900/50 transition-colors">
+                                <td class="py-3 px-4 font-medium flex items-center gap-2"><i class="fa-solid fa-ticket text-amberGold-500 text-xs"></i> Sanctuary Entry Fee</td>
+                                <td class="py-3 px-4">₹1,500</td>
+                                <td class="py-3 px-4 font-semibold text-amberGold-400">₹2,000</td>
+                            </tr>
+                            <tr class="hover:bg-jungle-900/50 transition-colors">
+                                <td class="py-3 px-4 font-medium flex items-center gap-2"><i class="fa-solid fa-truck-monster text-amberGold-500 text-xs"></i> Open Gypsy Vehicle Rate</td>
+                                <td class="py-3 px-4">₹2,500</td>
+                                <td class="py-3 px-4">₹2,500</td>
+                            </tr>
+                            <tr class="hover:bg-jungle-900/50 transition-colors">
+                                <td class="py-3 px-4 font-medium flex items-center gap-2"><i class="fa-solid fa-user-shield text-amberGold-500 text-xs"></i> Official Guide Fee</td>
+                                <td class="py-3 px-4">₹425</td>
+                                <td class="py-3 px-4">₹425</td>
+                            </tr>
+                            <tr class="hover:bg-jungle-900/50 transition-colors">
+                                <td class="py-3 px-4 font-medium flex items-center gap-2"><i class="fa-solid fa-camera text-amberGold-500 text-xs"></i> Camera Charges</td>
+                                <td class="py-3 px-4">₹200</td>
+                                <td class="py-3 px-4">₹200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Booking CTA -->
+                <div class="bg-jungle-900/80 p-6 rounded-2xl border border-jungle-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="text-xs sm:text-sm text-gray-300">
+                        <i class="fa-solid fa-circle-check text-amberGold-400 mr-1"></i> Permits are issued directly by the <strong>Maharashtra Forest Department</strong>. Advance online booking is highly recommended.
+                    </div>
+                    <a href="https://safaribooking.mahaforest.gov.in" target="_blank" rel="noopener noreferrer" class="whitespace-nowrap bg-amberGold-500 hover:bg-amberGold-600 text-jungle-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-sm flex items-center gap-2">
+                        <span>Book Official Safari</span>
+                        <i class="fa-solid fa-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resorts & Accommodations Directory -->
+        <section id="resorts" class="scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-amberGold-600 font-bold uppercase tracking-widest text-xs">Where to Stay</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-jungle-900 mt-1">Recommended Resorts & Lodges</h2>
+                </div>
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2 text-xs sm:text-sm">
+                    <button onclick="filterResorts('all')" class="resort-filter-btn px-4 py-2 rounded-xl bg-jungle-800 text-white font-semibold transition-all">All Gates</button>
+                    <button onclick="filterResorts('karhandla')" class="resort-filter-btn px-4 py-2 rounded-xl bg-gray-200 text-gray-700 hover:bg-gray-300 font-semibold transition-all">Near Karhandla Gate</button>
+                    <button onclick="filterResorts('gothangaon')" class="resort-filter-btn px-4 py-2 rounded-xl bg-gray-200 text-gray-700 hover:bg-gray-300 font-semibold transition-all">Near Gothangaon Gate</button>
+                    <button onclick="filterResorts('pauni')" class="resort-filter-btn px-4 py-2 rounded-xl bg-gray-200 text-gray-700 hover:bg-gray-300 font-semibold transition-all">Near Pauni Gate</button>
+                </div>
+            </div>
+
+            <!-- Resorts Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Karhandla Gate Resorts -->
+                <div class="resort-card karhandla bg-white rounded-2xl border border-gray-100 shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow">
+                    <div class="bg-jungle-900 text-white p-5 relative">
+                        <span class="bg-amberGold-500 text-jungle-950 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider inline-block mb-2">Karhandla Gate · 1 Km</span>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-300"><i class="fa-solid fa-hotel text-amberGold-400 mr-1"></i> 3-Star Hotel</span>
+                            <span class="bg-white/20 text-white font-bold text-xs px-2.5 py-1 rounded-lg"><i class="fa-solid fa-star text-amberGold-400"></i> 4.6 (1.3K)</span>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-lg text-jungle-900">Royal Karhandla Resort</h3>
+                            <p class="text-xs text-gray-500 mt-1">European-styled rooms, outdoor pool, exceptional multi-cuisine dining options highly praised by families.</p>
+                        </div>
+                        <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Est. Rate</span>
+                                <span class="text-lg font-bold text-jungle-900">₹6,310</span> <span class="text-xs text-gray-500">/ night</span>
+                            </div>
+                            <a href="#contact" class="text-amberGold-600 hover:text-amberGold-700 font-bold text-xs flex items-center gap-1">Enquire <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resort-card karhandla bg-white rounded-2xl border border-gray-100 shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow">
+                    <div class="bg-jungle-900 text-white p-5 relative">
+                        <span class="bg-amberGold-500 text-jungle-950 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider inline-block mb-2">Karhandla Gate</span>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-300"><i class="fa-solid fa-tree text-amberGold-400 mr-1"></i> Farm Resort</span>
+                            <span class="bg-white/20 text-white font-bold text-xs px-2.5 py-1 rounded-lg"><i class="fa-solid fa-star text-amberGold-400"></i> 4.7 (369)</span>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-lg text-jungle-900">Karhandla Tigers Farm & Resort</h3>
+                            <p class="text-xs text-gray-500 mt-1">Highly-rated rustic nature getaway with spacious rooms, focus on fresh organic dining, and dedicated swimming pool.</p>
+                        </div>
+                        <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Est. Rate</span>
+                                <span class="text-lg font-bold text-jungle-900">₹5,847</span> <span class="text-xs text-gray-500">/ night</span>
+                            </div>
+                            <a href="#contact" class="text-amberGold-600 hover:text-amberGold-700 font-bold text-xs flex items-center gap-1">Enquire <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resort-card karhandla bg-white rounded-2xl border border-gray-100 shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow">
+                    <div class="bg-jungle-900 text-white p-5 relative">
+                        <span class="bg-amberGold-500 text-jungle-950 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider inline-block mb-2">Karhandla Gate · 1.4 Km</span>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-300"><i class="fa-solid fa-campground text-amberGold-400 mr-1"></i> Eco Stay</span>
+                            <span class="bg-white/20 text-white font-bold text-xs px-2.5 py-1 rounded-lg"><i class="fa-solid fa-star text-amberGold-400"></i> 4.2 (107)</span>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-lg text-jungle-900">KP Woods Farm & Resort</h3>
+                            <p class="text-xs text-gray-500 mt-1">Budget-conscious favorite offering full nature vibes and on-site naturalists for guided nocturnal nature walks.</p>
+                        </div>
+                        <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Est. Rate</span>
+                                <span class="text-lg font-bold text-jungle-900">₹3,754</span> <span class="text-xs text-gray-500">/ night</span>
+                            </div>
+                            <a href="#contact" class="text-amberGold-600 hover:text-amberGold-700 font-bold text-xs flex items-center gap-1">Enquire <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gothangaon Gate Resorts -->
+                <div class="resort-card gothangaon bg-white rounded-2xl border border-gray-100 shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow">
+                    <div class="bg-teal-950 text-white p-5 relative">
+                        <span class="bg-teal-400 text-teal-950 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider inline-block mb-2">Gothangaon Zone</span>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-teal-200"><i class="fa-solid fa-gem text-teal-300 mr-1"></i> Eco-Luxury</span>
+                            <span class="bg-white/20 text-white font-bold text-xs px-2.5 py-1 rounded-lg"><i class="fa-solid fa-star text-amberGold-400"></i> 4.4 (1.4K)</span>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-lg text-jungle-900">Karhandla Wildlife Luxuries</h3>
+                            <p class="text-xs text-gray-500 mt-1">Premium eco-luxury resort featuring individual cottages with private terraces, swimming pool, and direct tiger zone access.</p>
+                        </div>
+                        <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Est. Rate</span>
+                                <span class="text-lg font-bold text-jungle-900">₹12,099</span> <span class="text-xs text-gray-500">/ night</span>
+                            </div>
+                            <a href="#contact" class="text-amberGold-600 hover:text-amberGold-700 font-bold text-xs flex items-center gap-1">Enquire <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resort-card gothangaon bg-white rounded-2xl border border-gray-100 shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow">
+                    <div class="bg-teal-950 text-white p-5 relative">
+                        <span class="bg-teal-400 text-teal-950 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider inline-block mb-2">25 mins from Gothangaon</span>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-teal-200"><i class="fa-solid fa-mountain-sun text-teal-300 mr-1"></i> Nature Lodge</span>
+                            <span class="bg-white/20 text-white font-bold text-xs px-2.5 py-1 rounded-lg"><i class="fa-solid fa-star text-amberGold-400"></i> 4.3 (98)</span>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-lg text-jungle-900">The Leopard Hill's Resort</h3>
+                            <p class="text-xs text-gray-500 mt-1">Peaceful, family-owned hidden gem tailored for wildlife enthusiasts. Features a luxury pool amidst dense foliage.</p>
+                        </div>
+                        <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Contact for Rates</span>
+                                <span class="text-sm font-semibold text-gray-600">On Request</span>
+                            </div>
+                            <a href="#contact" class="text-amberGold-600 hover:text-amberGold-700 font-bold text-xs flex items-center gap-1">Enquire <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pauni Gate Resorts -->
+                <div class="resort-card pauni bg-white rounded-2xl border border-gray-100 shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow">
+                    <div class="bg-indigo-950 text-white p-5 relative">
+                        <span class="bg-indigo-300 text-indigo-950 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider inline-block mb-2">Pauni Riverfront</span>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-indigo-200"><i class="fa-solid fa-water text-indigo-300 mr-1"></i> Riverside Retreat</span>
+                            <span class="bg-white/20 text-white font-bold text-xs px-2.5 py-1 rounded-lg"><i class="fa-solid fa-star text-amberGold-400"></i> 4.7 (106)</span>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-lg text-jungle-900">Sonchafa Resorts</h3>
+                            <p class="text-xs text-gray-500 mt-1">Riverside resort built directly on the banks of Wainganga River. Luxurious 1 BHK cottages & large swimming pools.</p>
+                        </div>
+                        <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Est. Rate</span>
+                                <span class="text-lg font-bold text-jungle-900">₹5,639</span> <span class="text-xs text-gray-500">/ night</span>
+                            </div>
+                            <a href="#contact" class="text-amberGold-600 hover:text-amberGold-700 font-bold text-xs flex items-center gap-1">Enquire <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="reach" class="scroll-mt-24">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- Text Info -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div>
+                            <span class="text-amberGold-600 font-bold uppercase tracking-widest text-xs">Seamless Connectivity</span>
+                            <h2 class="font-heading text-3xl font-extrabold text-jungle-900 mt-1">How to Reach Umred Karhandla</h2>
+                        </div>
+
+                        <div class="space-y-4 text-sm text-gray-600">
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-jungle-50/80">
+                                <i class="fa-solid fa-plane text-amberGold-600 text-lg mt-0.5"></i>
+                                <div>
+                                    <strong class="text-jungle-900 block">By Air (Nagpur Airport)</strong>
+                                    Dr. Babasaheb Ambedkar International Airport, Nagpur is ~50-58 km away (1.2 to 1.5 hours drive).
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-jungle-50/80">
+                                <i class="fa-solid fa-train text-amberGold-600 text-lg mt-0.5"></i>
+                                <div>
+                                    <strong class="text-jungle-900 block">By Train (Nagpur Junction)</strong>
+                                    Nagpur Railway Station is the closest major junction. The park is a 1:30-hour direct road drive from the station.
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 p-3 rounded-xl bg-jungle-50/80">
+                                <i class="fa-solid fa-car text-amberGold-600 text-lg mt-0.5"></i>
+                                <div>
+                                    <strong class="text-jungle-900 block">By Road / Personal Vehicle</strong>
+                                    Well-paved state highways connect Nagpur to Karhandla (63 km), Gothangaon (65 km), and Pauni (90 km).
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://www.google.com/maps/d/viewer?mid=1sLVXCdqSNEN-tOBTeUEoWTVc9z2SZ1M&femb=1&ll=20.835573479651313%2C79.42617134999998&z=14" target="_blank" class="inline-flex items-center gap-2 bg-jungle-800 hover:bg-jungle-900 text-white font-semibold text-sm px-5 py-3 rounded-xl transition-colors shadow">
+                            <i class="fa-solid fa-map-location-dot text-amberGold-400"></i> Open Interactive Map in Google Maps
+                        </a>
+                    </div>
+
+                    <!-- Map Card -->
+                    <div class="lg:col-span-7 bg-jungle-900 text-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between h-full min-h-[350px] relative overflow-hidden">
+                        <div>
+                            <span class="bg-amberGold-500 text-jungle-950 font-bold text-xs px-2.5 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">Map Coordinates</span>
+                            <h3 class="font-heading text-2xl font-bold">Umred Karhandla Sanctuary Map</h3>
+                            <p class="text-xs text-gray-300 mt-2">Lat/Long: 20.8355° N, 79.4261° E · Located in Nagpur & Bhandara Districts</p>
+                        </div>
+
+                        <div class="space-y-3 bg-jungle-950/80 backdrop-blur-md p-4 rounded-xl border border-jungle-800 my-4 text-xs">
+                            <div class="flex justify-between border-b border-jungle-800 pb-2">
+                                <span class="text-gray-400">Karhandla Gate</span>
+                                <span class="font-semibold text-amberGold-400">63 km from Nagpur</span>
+                            </div>
+                            <div class="flex justify-between border-b border-jungle-800 pb-2">
+                                <span class="text-gray-400">Gothangaon Gate</span>
+                                <span class="font-semibold text-amberGold-400">65 km from Nagpur</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Pauni Gate</span>
+                                <span class="font-semibold text-amberGold-400">90 km from Nagpur</span>
+                            </div>
+                        </div>
+
+                        <div class="text-xs text-gray-400 flex items-center justify-between">
+                            <span><i class="fa-solid fa-compass text-amberGold-400 mr-1"></i> Central India Tiger Corridor</span>
+                            <a href="https://www.google.com/maps/d/viewer?mid=1sLVXCdqSNEN-tOBTeUEoWTVc9z2SZ1M&femb=1&ll=20.835573479651313%2C79.42617134999998&z=14" target="_blank" class="text-amberGold-400 underline hover:text-amberGold-300">View Sanctuary Map &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion Section -->
+        <section id="faq" class="scroll-mt-24 max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-amberGold-600 font-bold uppercase tracking-widest text-xs">Got Questions?</span>
+                <h2 class="font-heading text-3xl font-extrabold text-jungle-900 mt-1">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(1)" class="w-full p-5 text-left font-bold text-jungle-900 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span>1) How far is Umred Karhandla from Nagpur airport and railway station?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-amberGold-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-1" class="hidden px-5 pb-5 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+                        The sanctuary is roughly 50–58 km from Dr. Babasaheb Ambedkar International Airport, Nagpur, and about 1 to 1.5 hours' drive from Nagpur Railway Station.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(2)" class="w-full p-5 text-left font-bold text-jungle-900 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span>2) How do I book a safari at Umred Karhandla?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-amberGold-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-2" class="hidden px-5 pb-5 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+                        Safari bookings are made through the official Maharashtra Forest Department portal (<a href="https://safaribooking.mahaforest.gov.in" target="_blank" class="text-amberGold-600 underline">safaribooking.mahaforest.gov.in</a>) by selecting your preferred gate, date, and slot in advance, as seats are limited.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(3)" class="w-full p-5 text-left font-bold text-jungle-900 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span>3) What animals can be seen at Umred Karhandla Wildlife Sanctuary?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-amberGold-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-3" class="hidden px-5 pb-5 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+                        The sanctuary is known for tigers (Fairy, Surya, Shadow, N4), leopards, sloth bears, wild dogs, gaur, nilgai, and over 180 species of birds, including exotic migratory species like the Red-crested Pochard across its dry deciduous teak forest.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(4)" class="w-full p-5 text-left font-bold text-jungle-900 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span>4) What is the best time to visit Umred Karhandla?</span>
+                        <i id="faq-icon-4" class="fa-solid fa-chevron-down text-amberGold-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-4" class="hidden px-5 pb-5 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+                        Winter (November–February) for pleasant weather & migratory birdwatching, and Summer (March–May, especially April) for higher tiger sighting chances near waterholes. The park remains closed during the monsoon season.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(5)" class="w-full p-5 text-left font-bold text-jungle-900 flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span>5) Are there official forest rest houses inside Umred Karhandla?</span>
+                        <i id="faq-icon-5" class="fa-solid fa-chevron-down text-amberGold-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-5" class="hidden px-5 pb-5 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-3">
+                        There is no official Maharashtra Forest Department rest house or inspection bungalow located directly inside or managed specifically as a public stay within the sanctuary. Visitors can stay at private resort hotels located near the entry gates.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="scroll-mt-24">
+            <div class="bg-jungle-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <span class="text-amberGold-400 font-bold uppercase tracking-widest text-xs">Get in Touch</span>
+                        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold">Plan Your Jungle Safari Today</h2>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Have queries regarding safari slots, gate selection, or resort bookings? Reach out directly to our enquiry desk.
+                        </p>
+
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-center gap-4 bg-jungle-950/60 p-4 rounded-xl border border-jungle-800">
+                                <div class="w-10 h-10 rounded-lg bg-amberGold-500 text-jungle-950 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-gray-400">Phone Enquiry</div>
+                                    <a href="tel:+919356853239" class="text-lg font-bold hover:text-amberGold-400 transition-colors">+91 9356853239</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 bg-jungle-950/60 p-4 rounded-xl border border-jungle-800">
+                                <div class="w-10 h-10 rounded-lg bg-amberGold-500 text-jungle-950 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-gray-400">Email Address</div>
+                                    <a href="mailto:visitumredjungle@gmail.com" class="text-sm font-semibold hover:text-amberGold-400 transition-colors">visitumredjungle@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 bg-jungle-950/60 p-4 rounded-xl border border-jungle-800">
+                                <div class="w-10 h-10 rounded-lg bg-amberGold-500 text-jungle-950 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-gray-400">Enquiry Hours</div>
+                                    <div class="text-sm font-semibold">9:00 AM – 9:00 PM (Daily)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Enquiry Form -->
+                    <div class="bg-white text-gray-900 rounded-2xl p-6 sm:p-8 shadow-xl">
+                        <h3 class="font-heading font-bold text-xl text-jungle-900 mb-4">Send a Quick Enquiry</h3>
+                        <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-600 mb-1">Your Name</label>
+                                <input type="text" required placeholder="Enter full name" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-jungle-800 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-600 mb-1">Contact Phone</label>
+                                <input type="tel" required placeholder="+91 Mobile number" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-jungle-800 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-600 mb-1">Preferred Gate / Dates</label>
+                                <select class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-jungle-800 text-sm">
+                                    <option>Karhandla Gate</option>
+                                    <option>Gothangaon Gate</option>
+                                    <option>Pauni Gate</option>
+                                    <option>Undecided / Need Assistance</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-amberGold-500 hover:bg-amberGold-600 text-jungle-950 font-bold py-3 rounded-xl transition-colors shadow">
+                                Send Request
+                            </button>
+                        </form>
+                        <div id="form-msg" class="hidden mt-3 text-center text-xs text-green-700 font-bold">
+                            Thank you! Your enquiry has been received.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-jungle-950 text-gray-400 text-xs py-10 border-t border-jungle-900">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+            <div class="flex items-center justify-center gap-2 text-white font-heading font-bold text-lg">
+                <i class="fa-solid fa-paw text-amberGold-500"></i> Umred Karhandla Tiger Reserve
+            </div>
+            <p class="max-w-xl mx-auto text-gray-400">
+                Official guide & tourism directory for Umred Karhandla Wildlife Sanctuary, Maharashtra, India.
+            </p>
+            <div class="pt-4 border-t border-jungle-900 text-gray-500">
+                &copy; 2026 Umred Karhandla Wildlife Sanctuary. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Gate Tabs Switcher
+        function switchGate(gateName) {
+            // Hide all gate content cards
+            document.querySelectorAll('.gate-content').forEach(card => {
+                card.classList.add('hidden');
+            });
+
+            // Reset tab styles
+            document.querySelectorAll('.gate-tab').forEach(tab => {
+                tab.classList.remove('bg-jungle-800', 'text-white', 'shadow-sm');
+                tab.classList.add('text-gray-700');
+            });
+
+            // Show selected card
+            const activeCard = document.getElementById(`gate-${gateName}`);
+            if (activeCard) {
+                activeCard.classList.remove('hidden');
+            }
+
+            // Highlight selected tab
+            const activeTab = document.getElementById(`tab-${gateName}`);
+            if (activeTab) {
+                activeTab.classList.add('bg-jungle-800', 'text-white', 'shadow-sm');
+                activeTab.classList.remove('text-gray-700');
+            }
+        }
+
+        // Resort Gate Filter
+        function filterResorts(category) {
+            const cards = document.querySelectorAll('.resort-card');
+            const btns = document.querySelectorAll('.resort-filter-btn');
+
+            // Style active button
+            btns.forEach(btn => {
+                btn.classList.remove('bg-jungle-800', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-700');
+            });
+            event.target.classList.add('bg-jungle-800', 'text-white');
+            event.target.classList.remove('bg-gray-200', 'text-gray-700');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // FAQ Toggle Accordion
+        function toggleFaq(index) {
+            const answer = document.getElementById(`faq-answer-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                answer.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Form Submit Simulation
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const msg = document.getElementById('form-msg');
+            msg.classList.remove('hidden');
+            setTimeout(() => {
+                msg.classList.add('hidden');
+                e.target.reset();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
